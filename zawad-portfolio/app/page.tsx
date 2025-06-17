@@ -95,7 +95,39 @@ export default function Portfolio() {
   }
 
   return (
-  
+  <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Navigation */}
+      <nav className = "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+        <div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className = "flex justify-between items-center py-4">
+          <div className="text-2xl font-bold text-blue-600">Zawad's Domain</div>
+          <div className = "hidden md:flex space-x-8">
+            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+            <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+            <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+          </div>
+
+          <div className = "flex space-x-4">
+            <Button variant="outline" size="sm">
+              <Download className="w-4 h-4 mr-2"/>
+              Resume
+            </Button>
+          </div>
+          
+          </div>
+
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+  </div>
     
   )
   
