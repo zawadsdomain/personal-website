@@ -86,5 +86,12 @@ export default function Portfolio() {
     }    
   ] 
 
+  const skills = {
+    Languages: ["JavaScript", "TypeScript", "Python", "HTML/CSS", "SQL", "C++", "C", "Java"],
+    Frontend: ["React.js", "Vue.js", "React Native", "Bootstrap", "Tailwind CSS"],
+    Backend: ["Node.js", "Express", "Flask", "FastAPI", "REST APIs"],
+    Databases: ["PostgreSQL", "Firebase", "NoSQL", "Neon DB"],
+    "Tools & Platforms": ["Git", "Railway", "Expo", "MapReduce", "Vercel"],
+  }
   
 }
