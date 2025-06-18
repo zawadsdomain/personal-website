@@ -121,6 +121,55 @@ export default function Portfolio() {
       </nav>
 
 
+      {/* Hero Section */}
+
+      <section className="relative py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mb-8">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
+                Z
+              </div>
+            </div>
+            <h1 className ="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
+            Welcome to{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Zawad's Domain
+              </span>
+            </h1>
+            <p className = "text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              Passionate Software Engineer & Recent Graduate from the University of Michigan.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Mail className="bg-blue-600 hover:bg-blue-700"/>
+                Get In Touch
+              </Button>
+              <Button size = "lg" variant="outline">
+              <Github className="w-5 h-5 mr-2" />
+              View Projects
+              </Button>
+            </div>
+            <div className="flex justify-center space-x-6 mt-8">
+              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+                <Github className="w-6 h-6" />
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+                <Linkedin className="w-6 h-6" />
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+                <Mail className="w-6 h-6" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      
+
+
+
 
 
 
