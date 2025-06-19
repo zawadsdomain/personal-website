@@ -169,8 +169,43 @@ export default function Portfolio() {
       <section id = "about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className = "text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="mb-6">
+              <Badge variant="secondary" className="mb-4">
+                  <GraduationCap className="w-4 h-4 mr-2" />
+                  University of Michigan Graduate
+                </Badge>
+              </div>
+              <p className = "text-gray-600 mb-8">
+                As a new graduate entering the tech industry, I bring fresh perspectives, cutting-edge knowledge, and an
+                unwavering enthusiasm for creating innovative solutions. My academic journey has equipped me with a
+                solid foundation in computer science principles, and I'm eager to apply these skills to real-world
+                scenarios.
+              </p>
+              <div className = "grid sm:grid-cols-3 gap-6">
+                <div className = "text-center p-6 bg-blue-50 rounded-lg">
+                <Server className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                <h4 className="font-semibold text-gray-900 mb-2">Backend Development</h4>
+                <p className="text-sm text-gray-600">Server-side logic, databases, and API design</p>
+                </div>
+
+                <div className="text-center p-6 bg-purple-50 rounded-lg">
+                  <Globe className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <h4 className="font-semibold text-gray-900 mb-2">Frontend Development</h4>
+                  <p className="text-sm text-gray-600">User interfaces and interactive experiences</p>
+                </div>
+
+                <div className="text-center p-6 bg-green-50 rounded-lg">
+                  <Zap className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <h4 className="font-semibold text-gray-900 mb-2">Full Stack Development</h4>
+                  <p className="text-sm text-gray-600">End-to-end web and mobile applications</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
