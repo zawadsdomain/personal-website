@@ -204,6 +204,18 @@ export default function Portfolio() {
                   <h4 className="font-semibold text-gray-900 mb-2">Full Stack Development</h4>
                   <p className="text-sm text-gray-600">End-to-end web and mobile applications</p>
                 </div>
+
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
+              <div className="space-y-4">
+                <div className = "flex items-center">
+                <MapPin className="w-5 h-5 text-blue-600 mr-3" />
+                <span className="text-gray-700">Based in Michigan, USA</span>
+                </div>
+                
               </div>
             </div>
           </div>
