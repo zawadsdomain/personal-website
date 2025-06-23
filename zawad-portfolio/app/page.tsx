@@ -233,11 +233,19 @@ export default function Portfolio() {
                 
               </div>
 
-              
+              <div className = "mt-8 p-4 bg-white rounded-lg border-l-4 border-blue-600">
+                <p className="text-gray-700 font-medium">
+                "I'm actively seeking opportunities in backend, frontend, and full-stack roles where I can contribute
+                to meaningful projects while continuing to grow and learn from experienced professionals. I'm open to relocation."
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
+
+      
 
 
 
