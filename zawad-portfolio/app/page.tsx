@@ -245,7 +245,61 @@ export default function Portfolio() {
         </div>
       </section>
 
-      
+      {/* Projects Section */}
+
+      <section id = "projects" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            A showcase of my technical skills and problem-solving abilities through diverse projects.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                  <Badge variant={project.status === "In Development" ? "default" : "secondary"}>
+                      {project.status}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">{project.title}</CardTitle>
+                  <CardDescription className ="text-base">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className = "text-sm text-gray-600 mb-4">{project.longDescription}</p>
+                  <div className = "flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0,4).map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                      {tech}
+                      </Badge>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <Badge variant="secondary" className="text-xs">
+                      +{project.technologies.length - 4} more
+                      </Badge>
+                    )}
+                  </div>
+
+                  <div className="flex space-x-2">
+                  <Button size="sm" variant="outline" className="flex-1">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Demo
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
 
