@@ -341,7 +341,11 @@ export default function Portfolio() {
       </section>
 
 
+      {/* Contact Section */}
 
+      <section id = "contact" className="py-20 bg-gray-50">
+        
+      </section>
 
 
   </div>
