@@ -216,7 +216,24 @@ export default function Portfolio() {
                 <span className="text-gray-700">Based in Michigan, USA</span>
                 </div>
                 
+                <div className="flex items-center">
+                <Trophy className="w-5 h-5 text-blue-600 mr-3" />
+                <span className="text-gray-700">8+ Projects Completed</span>
+                </div>
+
+                <div className="flex items-center">
+                  <Code className="w-5 h-5 text-blue-600 mr-3" />
+                  <span className="text-gray-700">Full Stack Developer</span>
+                </div>
+
+                <div className="flex items-center">
+                  <GraduationCap className="w-5 h-5 text-blue-600 mr-3" />
+                  <span className="text-gray-700">Computer Science Degree</span>
+                </div>
+                
               </div>
+
+              
             </div>
           </div>
         </div>
