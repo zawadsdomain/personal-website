@@ -302,8 +302,19 @@ export default function Portfolio() {
       </section>
 
 
+      {/* Skills Section */}
+        
+      <section id = "skills" className="py-20 bg-white">
+        <div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className = "text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p className = "text-xl text-gray-600">Technologies and tools I work with</p>
+          </div>
 
-
+          
+        </div>
+      </section>
 
 
 
