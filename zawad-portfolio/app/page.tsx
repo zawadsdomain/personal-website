@@ -312,7 +312,31 @@ export default function Portfolio() {
             <p className = "text-xl text-gray-600">Technologies and tools I work with</p>
           </div>
 
-          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(skills).map(([category, skillList], index) => (
+              <Card key = {index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-lg">
+                  {category === "Languages" && <Code className="w-5 h-5 mr-2 text-blue-600" />}
+                    {category === "Frontend" && <Globe className="w-5 h-5 mr-2 text-purple-600" />}
+                    {category === "Backend" && <Server className="w-5 h-5 mr-2 text-green-600" />}
+                    {category === "Databases" && <Database className="w-5 h-5 mr-2 text-orange-600" />}
+                    {category === "Tools & Platforms" && <Zap className="w-5 h-5 mr-2 text-red-600" />}
+                    {category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {skillList.map((skill, skillIndex) => (
+                      <Badge key = {skillIndex} variant="secondary" className="hover:bg-blue-100 transition-colors">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
