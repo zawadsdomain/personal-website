@@ -387,7 +387,32 @@ export default function Portfolio() {
             </div>
 
             <Card>
-              
+              <CardHeader>
+                <CardTitle>Send a Message</CardTitle>
+                <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className = "space-y-4">
+                  <div className = "grid grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input id="firstName" placeholder="John" />
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input id = "lastName" placeholder="Doe"/>
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input id = "email" type = "email" placeholder="john@example.com"/>
+                  </div>
+                  <div>
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input id = "subject" placeholder="Let's work together..."/>
+                  </div>
+                </form>
+              </CardContent>
             </Card>
 
           </div>
