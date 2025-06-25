@@ -344,7 +344,58 @@ export default function Portfolio() {
       {/* Contact Section */}
 
       <section id = "contact" className="py-20 bg-gray-50">
-        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-600">Ready to build something amazing together?</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+              <p className="text-gray-600 mb-8">
+              I'm actively seeking new opportunities and would love to hear from you. Whether you have a project in
+              mind or just want to connect, feel free to reach out!
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Mail className="w-5 h-5 text-blue-600 mr-4" />
+                  <span className="text-gray-700">zawadchowdhury53@gmail.com</span>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 text-blue-600 mr-4" />
+                  <span className="text-gray-700">+1 (586) 354-7867</span>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="w-5 h-5 text-blue-600 mr-4" />
+                  <span className="text-gray-700">Michigan, USA -- Open to Relocation</span> 
+                </div>
+              </div>
+
+              <div className="flex space-x-4 mt-8">
+                <Button variant="outline" size="lg">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </Button>
+                <Button variant="outline" size="lg">
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </Button>
+              </div>
+            </div>
+
+            <Card>
+              
+            </Card>
+
+          </div>
+
+
+
+
+        </div>
       </section>
 
 
