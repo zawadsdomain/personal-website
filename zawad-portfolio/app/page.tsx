@@ -411,6 +411,18 @@ export default function Portfolio() {
                     <Label htmlFor="subject">Subject</Label>
                     <Input id = "subject" placeholder="Let's work together..."/>
                   </div>
+                  <div>
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell me about your project or opportunity..."
+                      className="min-h-[120px]"
+                    />
+                  </div>
+                  <Button>
+                    <Mail className="w-4 h-4 mr-2" />
+                    Send Message
+                  </Button>
                 </form>
               </CardContent>
             </Card>
