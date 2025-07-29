@@ -121,8 +121,8 @@ export default function Portfolio() {
 
     try{
       const result = await emailjs.send(
-        'service_o4nnv2i', // service ID
-        'template_rr7xn6b', // template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           firstName: firstName,
           lastName: lastName,
@@ -130,7 +130,7 @@ export default function Portfolio() {
           subject: subject,
           message: message,
         },
-        'UVViSlr4XAecw7ooU' // public emailjs key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
 
       console.log('Email sent successfully:', result)
