@@ -454,13 +454,13 @@ export default function Portfolio() {
             <div className="text-2xl font-bold mb-4">Zawad's Domain</div>
             <p className = "text-gray-400 mb-6">Building the future, one line of code at a time.</p>
             <div className="flex justify-center space-x-6 mb-8">
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="https://github.com/zawadsdomain" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://linkedin.com/in/zawad-chowdhury-b9a706222" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="mailto:zawadchowdhury53@gmail.com" target="_blank" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-6 h-6" />
               </Link>
             </div>
