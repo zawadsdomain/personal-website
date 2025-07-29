@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import emailjs from '@emailjs/browser'
+import { useState } from 'react'
 import {
   Github,
   Linkedin,
@@ -96,6 +98,14 @@ export default function Portfolio() {
     "Tools & Platforms": ["Git", "Railway", "Expo", "MapReduce", "Vercel"],
   }
 
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+
   const handleResumeDownload = () => {
     const link = document.createElement('a')
     link.href = '/Zawad_Chowdhury_Resume.pdf'
@@ -103,6 +113,40 @@ export default function Portfolio() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+
+    try{
+      const result = await emailjs.send(
+        'service_o4nnv2i', // service ID
+        'template_rr7xn6b', // template ID
+        {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          subject: subject,
+          message: message,
+        },
+        'UVViSlr4XAecw7ooU' // public emailjs key
+      )
+
+      console.log('Email sent successfully:', result)
+      // clear form fields and set to default values
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setSubject('')
+      setMessage('')
+
+    } catch (error) {
+      console.error("Error sending email:", error)
+
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -403,24 +447,24 @@ export default function Portfolio() {
                 <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
               </CardHeader>
               <CardContent>
-                <form className = "space-y-4">
+                <form className = "space-y-4" onSubmit={handleSubmit}>
                   <div className = "grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
+                      <Input id="firstName" placeholder="John" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
                     <div>
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id = "lastName" placeholder="Doe"/>
+                      <Input id = "lastName" placeholder="Doe" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                     </div>
                   </div>
                   <div>
                     <Label htmlFor="email">Email</Label>
-                    <Input id = "email" type = "email" placeholder="john@example.com"/>
+                    <Input id = "email" type = "email" placeholder="john@example.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   </div>
                   <div>
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id = "subject" placeholder="Let's work together..."/>
+                    <Input id = "subject" placeholder="Let's work together..." value={subject} onChange={(e) => setSubject(e.target.value)}/>
                   </div>
                   <div>
                     <Label htmlFor="message">Message</Label>
@@ -428,11 +472,13 @@ export default function Portfolio() {
                       id="message"
                       placeholder="Tell me about your project or opportunity..."
                       className="min-h-[120px]"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     />
                   </div>
-                  <Button>
+                  <Button type="submit" disabled={isLoading}>
                     <Mail className="w-4 h-4 mr-2" />
-                    Send Message
+                    {isLoading ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
