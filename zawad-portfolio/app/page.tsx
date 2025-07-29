@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -94,6 +96,15 @@ export default function Portfolio() {
     "Tools & Platforms": ["Git", "Railway", "Expo", "MapReduce", "Vercel"],
   }
 
+  const handleResumeDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/Zawad_Chowdhury_Resume.pdf'
+    link.download = 'Zawad_Chowdhury_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
   <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
@@ -109,7 +120,7 @@ export default function Portfolio() {
           </div>
 
           <div className = "flex space-x-4">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleResumeDownload}>
               <Download className="w-4 h-4 mr-2"/>
               Resume
             </Button>
@@ -151,13 +162,13 @@ export default function Portfolio() {
               </Button>
             </div>
             <div className="flex justify-center space-x-6 mt-8">
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <Link href="https://github.com/zawadsdomain" target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Github className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <Link href="https://linkedin.com/in/zawad-chowdhury-b9a706222" target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <Link href="mailto:zawadchowdhury53@gmail.com" target="_blank" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Mail className="w-6 h-6" />
               </Link>
             </div>
