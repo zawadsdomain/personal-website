@@ -28,7 +28,20 @@ import Link from "next/link"
 
 
 export default function Portfolio() {
-  const projects = [
+  type Project = {
+    title: string
+    description: string
+    longDescription: string
+    technologies: string[]
+    status: string
+    category: string
+    links: {
+      code: string | null
+      demo: string | null
+    }
+  }
+
+  const projects: Project[] = [
     {
       title: "You Know Ball",
       description: "NBA stock market-style web app where fans can buy and sell virtual shares of their favorite players based on performance. Combines sports analytics with financial trading concepts.",
@@ -37,6 +50,10 @@ export default function Portfolio() {
       technologies: ["REST API", "Express", "Node.js", "TypeScript", "Firebase", "React.js"],
       status: "In Development",
       category: "Full Stack",
+      links: {
+        code: "https://github.com/zawadsdomain/YouKnowBall",
+        demo: null
+      }
     },
     {
       title: "Sports Court Mobile App",
@@ -47,6 +64,10 @@ export default function Portfolio() {
       technologies: ["React Native", "Express", "PostgreSQL", "TypeScript", "Neon DB", "Railway", "Expo"],
       status: "Deployed",
       category: "Mobile",
+      links: {
+        code: "https://github.com/knika01/sportscourt",
+        demo: "https://www.youtube.com/watch?v=fo9J7Y5X6Qg"
+      }
     },
     {
       title: "YouTube Bulk Downloader",
@@ -57,6 +78,10 @@ export default function Portfolio() {
       technologies: ["Python", "FastAPI", "REST API", "ytmpeg"],
       status: "In Development",
       category: "Web App",
+      links: {
+        code: "https://github.com/zawadsdomain/youtube-playlist-bulk-downloader",
+        demo: null
+      }
     },
     {
       title: "Search Engine",
@@ -67,6 +92,10 @@ export default function Portfolio() {
       technologies: ["Python", "MapReduce", "REST API", "tf-idf"],
       status: "Complete",
       category: "Backend",
+      links: {
+        code: null,
+        demo: null
+      }
     },
     {
       title: "Instagram Clone",
@@ -77,6 +106,10 @@ export default function Portfolio() {
       technologies: ["Python", "Flask", "React.js", "REST API", "Database"],
       status: "Complete",
       category: "Full Stack",
+      links: {
+        code: null,
+        demo: null
+      }
     },
     {
       title: "Artist Search App",
@@ -87,6 +120,10 @@ export default function Portfolio() {
       technologies: ["Vue.js", "Bootstrap", "JavaScript", "iTunes API", "HTML/CSS"],
       status: "Complete",
       category: "Frontend",
+      links: {
+        code: null,
+        demo: null
+      }
     }    
   ] 
 
@@ -340,14 +377,49 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex space-x-2">
-                  <Button size="sm" variant="outline" className="flex-1">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
+                    {project.links.code ? (
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => project.links.code && window.open(project.links.code, '_blank')}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    ) : (
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => window.open(`mailto:zawadchowdhury53@gmail.com?subject=Request Access: ${project.title}&body=Hi Zawad,%0D%0A%0D%0AI'm interested in viewing the code for your ${project.title} project. Could you please provide access?%0D%0A%0D%0AThanks!`, '_blank')}
+                      >
+                        <Mail className="w-4 h-4 mr-2" />
+                        Request Access
+                      </Button>
+                    )}
+                    
+                    {project.links.demo ? (
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => project.links.demo && window.open(project.links.demo, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
+                    ) : (
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1"
+                        disabled
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        No Demo
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
