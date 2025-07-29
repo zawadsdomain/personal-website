@@ -152,13 +152,13 @@ export default function Portfolio() {
               Passionate Software Engineer & Recent Graduate from the University of Michigan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Mail className="bg-blue-600 hover:bg-blue-700"/>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Mail className="w-5 h-5 mr-2"/>
                 Get In Touch
               </Button>
-              <Button size = "lg" variant="outline">
-              <Github className="w-5 h-5 mr-2" />
-              View Projects
+              <Button size="lg" variant="outline" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Github className="w-5 h-5 mr-2" />
+                View Projects
               </Button>
             </div>
             <div className="flex justify-center space-x-6 mt-8">
@@ -386,11 +386,11 @@ export default function Portfolio() {
               </div>
 
               <div className="flex space-x-4 mt-8">
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={() => window.open('https://github.com/zawadsdomain', '_blank')}>
                   <Github className="w-5 h-5 mr-2" />
                   GitHub
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={() => window.open('https://linkedin.com/in/zawad-chowdhury-b9a706222', '_blank')}>
                   <Linkedin className="w-5 h-5 mr-2" />
                   LinkedIn
                 </Button>
