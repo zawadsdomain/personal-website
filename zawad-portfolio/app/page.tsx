@@ -130,7 +130,7 @@ export default function Portfolio() {
   const skills = {
     Languages: ["JavaScript", "TypeScript", "Python", "HTML/CSS", "SQL", "C++", "C", "Java"],
     Frontend: ["React.js", "Vue.js", "React Native", "Bootstrap", "Tailwind CSS"],
-    Backend: ["Node.js", "Express", "Flask", "FastAPI", "REST APIs"],
+    Backend: ["Node.js", "Express", "Flask", "FastAPI", "REST APIs", "Spring Boot"],
     Databases: ["PostgreSQL", "Firebase", "NoSQL", "Neon DB"],
     "Tools & Platforms": ["Git", "Railway", "Expo", "MapReduce", "Vercel"],
   }
@@ -192,7 +192,7 @@ export default function Portfolio() {
       <nav className = "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
         <div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className = "flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-blue-600">Zawad's Domain</div>
+          <div className="text-2xl font-bold text-blue-600">Zawad&apos;s Domain</div>
           <div className = "hidden md:flex space-x-8">
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
             <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
@@ -226,7 +226,7 @@ export default function Portfolio() {
             <h1 className ="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
             Welcome to{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Zawad's Domain
+                Zawad&apos;s Domain
               </span>
             </h1>
             <p className = "text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -275,7 +275,7 @@ export default function Portfolio() {
               <p className = "text-gray-600 mb-8">
                 As a new graduate entering the tech industry, I bring fresh perspectives, cutting-edge knowledge, and an
                 unwavering enthusiasm for creating innovative solutions. My academic journey has equipped me with a
-                solid foundation in computer science principles, and I'm eager to apply these skills to real-world
+                solid foundation in computer science principles, and I&apos;m eager to apply these skills to real-world
                 scenarios.
               </p>
               <div className = "grid sm:grid-cols-3 gap-6">
@@ -327,8 +327,8 @@ export default function Portfolio() {
 
               <div className = "mt-8 p-4 bg-white rounded-lg border-l-4 border-blue-600">
                 <p className="text-gray-700 font-medium">
-                "I'm actively seeking opportunities in backend, frontend, and full-stack roles where I can contribute
-                to meaningful projects while continuing to grow and learn from experienced professionals. I'm open to relocation."
+                &quot;I&apos;m actively seeking opportunities in backend, frontend, and full-stack roles where I can contribute
+                to meaningful projects while continuing to grow and learn from experienced professionals. I&apos;m open to relocation.&quot;
                 </p>
               </div>
 
@@ -392,7 +392,7 @@ export default function Portfolio() {
                         size="sm" 
                         variant="outline" 
                         className="flex-1"
-                        onClick={() => window.open(`mailto:zawadchowdhury53@gmail.com?subject=Request Access: ${project.title}&body=Hi Zawad,%0D%0A%0D%0AI'm interested in viewing the code for your ${project.title} project. Could you please provide access?%0D%0A%0D%0AThanks!`, '_blank')}
+                        onClick={() => window.open(`mailto:zawadchowdhury53@gmail.com?subject=Request Access: ${project.title}&body=Hi Zawad,%0D%0A%0D%0AI&apos;m interested in viewing the code for your ${project.title} project. Could you please provide access?%0D%0A%0D%0AThanks!`, '_blank')}
                       >
                         <Mail className="w-4 h-4 mr-2" />
                         Request Access
@@ -482,8 +482,8 @@ export default function Portfolio() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
               <p className="text-gray-600 mb-8">
-              I'm actively seeking new opportunities and would love to hear from you. Whether you have a project in
-              mind or just want to connect, feel free to reach out!
+                I&apos;m actively seeking new opportunities and would love to hear from you. Whether you have a project in
+                mind or just want to connect, feel free to reach out!
               </p>
 
               <div className="space-y-4">
@@ -569,7 +569,7 @@ export default function Portfolio() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-2xl font-bold mb-4">Zawad's Domain</div>
+            <div className="text-2xl font-bold mb-4">Zawad&apos;s Domain</div>
             <p className = "text-gray-400 mb-6">Building the future, one line of code at a time.</p>
             <div className="flex justify-center space-x-6 mb-8">
             <Link href="https://github.com/zawadsdomain" target="_blank" className="text-gray-400 hover:text-white transition-colors">
