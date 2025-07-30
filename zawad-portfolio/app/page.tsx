@@ -516,7 +516,7 @@ export default function Portfolio() {
             <Card>
               <CardHeader>
                 <CardTitle>Send a Message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+                <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
               </CardHeader>
               <CardContent>
                 <form className = "space-y-4" onSubmit={handleSubmit}>
