@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import emailjs from '@emailjs/browser'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Github,
   Linkedin,
@@ -30,6 +30,26 @@ import Link from "next/link"
 export default function Portfolio() {
   const [showWelcome, setShowWelcome] = useState(true)
   const [fadeOut, setFadeOut] = useState(false)
+  const [showTitle, setShowTitle] = useState(false)
+  const [showStatus1, setShowStatus1] = useState(false)
+  const [showStatus2, setShowStatus2] = useState(false)
+  const [showStatus3, setShowStatus3] = useState(false)
+  const [showStatus4, setShowStatus4] = useState(false)
+  const [showStatus5, setShowStatus5] = useState(false)
+  const [showButton, setShowButton] = useState(false)
+  const [showHint, setShowHint] = useState(false)
+
+  // Trigger the sequence when component mounts
+  useEffect(() => {
+    setTimeout(() => setShowTitle(true), 500)
+    setTimeout(() => setShowStatus1(true), 1500)
+    setTimeout(() => setShowStatus2(true), 2000)
+    setTimeout(() => setShowStatus3(true), 2500)
+    setTimeout(() => setShowStatus4(true), 3500)
+    setTimeout(() => setShowStatus5(true), 4000)
+    setTimeout(() => setShowButton(true), 4500)
+    setTimeout(() => setShowHint(true), 5000)
+  }, [])
 
   type Project = {
     title: string
@@ -215,7 +235,13 @@ export default function Portfolio() {
       {showWelcome && (
         <div className={`fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500 ease-in-out ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
           <div className="text-center text-white">
-            <h1 className="text-6xl lg:text-8xl font-bold mb-8 animate-pulse">
+            <div className="mb-8">
+              <div className={`text-green-400 text-sm font-mono mb-2 transition-opacity duration-500 ${showStatus1 ? 'opacity-100' : 'opacity-0'}`}>SYSTEM: INITIALIZING...</div>
+              <div className={`text-green-400 text-sm font-mono mb-2 transition-opacity duration-500 ${showStatus2 ? 'opacity-100' : 'opacity-0'}`}>SECURITY CLEARANCE: PENDING</div>
+              <div className={`text-green-400 text-sm font-mono mb-4 transition-opacity duration-500 ${showStatus3 ? 'opacity-100' : 'opacity-0'}`}>ACCESS LEVEL: DOMAIN ENTRY</div>
+            </div>
+            
+            <h1 className={`text-6xl lg:text-8xl font-bold mb-8 animate-pulse transition-opacity duration-1000 ${showTitle ? 'opacity-100' : 'opacity-0'}`}>
               <span className="inline-block animate-bounce" style={{ animationDelay: '0ms' }}>W</span>
               <span className="inline-block animate-bounce" style={{ animationDelay: '100ms' }}>e</span>
               <span className="inline-block animate-bounce" style={{ animationDelay: '200ms' }}>l</span>
@@ -241,13 +267,27 @@ export default function Portfolio() {
               <span className="inline-block animate-bounce" style={{ animationDelay: '2200ms' }}>.</span>
               <span className="inline-block animate-bounce" style={{ animationDelay: '2300ms' }}>.</span>
             </h1>
-            <Button 
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-4 transition-all duration-300 hover:scale-105"
-              onClick={handleWelcomeContinue}
-            >
-              Press to Continue
-            </Button>
+            
+            <div className="mb-6">
+              <div className={`text-green-400 text-sm font-mono mb-2 transition-opacity duration-500 ${showStatus4 ? 'opacity-100' : 'opacity-0'}`}>STATUS: ACCESS GRANTED</div>
+              <div className={`text-green-400 text-sm font-mono transition-opacity duration-500 ${showStatus5 ? 'opacity-100' : 'opacity-0'}`}>AUTHORIZATION: APPROVED</div>
+            </div>
+            
+            <div className={`transition-opacity duration-500 ${showButton ? 'opacity-100' : 'opacity-0'}`}>
+              <Button 
+                size="lg" 
+                className="bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-4 transition-all duration-300 hover:scale-105 border-2 border-green-400 shadow-lg shadow-green-500/50 font-mono"
+                onClick={handleWelcomeContinue}
+              >
+                <span className="mr-2">[</span>
+                ENTER DOMAIN
+                <span className="ml-2">]</span>
+              </Button>
+            </div>
+            
+            <div className={`mt-6 text-gray-400 text-xs font-mono transition-opacity duration-500 ${showHint ? 'opacity-100' : 'opacity-0'}`}>
+              <div>Press to proceed with clearance...</div>
+            </div>
           </div>
         </div>
       )}
