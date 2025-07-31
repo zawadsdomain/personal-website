@@ -28,6 +28,9 @@ import Link from "next/link"
 
 
 export default function Portfolio() {
+  const [showWelcome, setShowWelcome] = useState(true)
+  const [fadeOut, setFadeOut] = useState(false)
+
   type Project = {
     title: string
     description: string
@@ -165,6 +168,13 @@ export default function Portfolio() {
     document.body.removeChild(link)
   }
 
+  const handleWelcomeContinue = () => {
+    setFadeOut(true)
+    setTimeout(() => {
+      setShowWelcome(false)
+    }, 500) // Wait for fade-out animation to complete
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -201,6 +211,47 @@ export default function Portfolio() {
 
   return (
   <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Welcome Screen Overlay */}
+      {showWelcome && (
+        <div className={`fixed inset-0 bg-black z-[9999] flex items-center justify-center transition-opacity duration-500 ease-in-out ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="text-center text-white">
+            <h1 className="text-6xl lg:text-8xl font-bold mb-8 animate-pulse">
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0ms' }}>W</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '100ms' }}>e</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '200ms' }}>l</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '300ms' }}>c</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '400ms' }}>o</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '500ms' }}>m</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '600ms' }}>e</span>
+              <span className="inline-block animate-bounce mx-4" style={{ animationDelay: '700ms' }}> </span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '800ms' }}>t</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '900ms' }}>o</span>
+              <span className="inline-block animate-bounce mx-4" style={{ animationDelay: '1000ms' }}> </span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1100ms' }}>t</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1200ms' }}>h</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1300ms' }}>e</span>
+              <span className="inline-block animate-bounce mx-4" style={{ animationDelay: '1400ms' }}> </span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1500ms' }}>D</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1600ms' }}>o</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1700ms' }}>m</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1800ms' }}>a</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1900ms' }}>i</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '2000ms' }}>n</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '2100ms' }}>.</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '2200ms' }}>.</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '2300ms' }}>.</span>
+            </h1>
+            <Button 
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-4 transition-all duration-300 hover:scale-105"
+              onClick={handleWelcomeContinue}
+            >
+              Press to Continue
+            </Button>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
       <nav className = "sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
         <div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
