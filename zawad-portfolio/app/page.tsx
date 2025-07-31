@@ -70,6 +70,19 @@ export default function Portfolio() {
       }
     },
     {
+      title: "Personal Website",
+      description: "Personal website built with Next.js, Tailwind CSS, and TypeScript. It showcases my projects, skills, and experiences.",
+      longDescription: 
+      "Created the design and implemented the frontend using Next.js, still working to add my own spin to it.",
+      technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
+      status: "Deployed",
+      category: "Frontend",
+      links: {
+        code: "https://github.com/zawadsdomain/personal-website/",
+        demo: null
+      }
+    },
+    {
       title: "YouTube Bulk Downloader",
       description:
         "Web application for downloading entire YouTube playlists efficiently with batch processing capabilities.",
