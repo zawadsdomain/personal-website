@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zawad's Domain - Software Engineer Portfolio",
+  title: "Zawad's Domain - Portfolio",
   description: "Personal portfolio website showcasing Zawad Chowdhury's projects, skills, and experience as a Software Engineer and recent University of Michigan graduate.",
 };
 
