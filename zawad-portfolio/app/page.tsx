@@ -66,6 +66,18 @@ export default function Portfolio() {
 
   const projects: Project[] = [
     {
+      title: "Free Eats",
+      description: "Web application connecting restaurants with surplus food to food banks, and volunteers for pickup and delivery. Aims to reduce food waste and support communities in need.",
+      longDescription: "Developed a full-stack web application using Java Spring Boot for the backend and React.js for the frontend. Implemented user authentication, restaurant and food bank profiles, navigation using Google Maps API, and real-time food availability claimings using WebSocket API. Demo is available upon request to limit google maps api usage.",
+      technologies: ["REST API", "Java", "Spring Boot", "React.js", "TypeScript", "MySQL", "Google Maps API", "WebSocket API", "JWT Authentication"],
+      status: "Deployed",
+      category: "Web App",
+      links: {
+        code: null,
+        demo: null
+      }
+    },
+    {
       title: "You Know Ball",
       description: "NBA stock market-style web app where fans can buy and sell virtual shares of their favorite players based on performance. Combines sports analytics with financial trading concepts.",
       longDescription: 
