@@ -485,11 +485,6 @@ export default function Portfolio() {
                       {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <Badge variant="secondary" className="text-xs">
-                      +{project.technologies.length - 4} more
-                      </Badge>
-                    )}
                   </div>
 
                   <div className="flex space-x-2">
