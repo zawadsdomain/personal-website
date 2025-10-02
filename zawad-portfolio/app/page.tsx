@@ -480,7 +480,7 @@ export default function Portfolio() {
                 <CardContent>
                   <p className = "text-sm text-gray-600 mb-4">{project.longDescription}</p>
                   <div className = "flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0,4).map((tech, techIndex) => (
+                    {project.technologies.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="text-xs">
                       {tech}
                       </Badge>
