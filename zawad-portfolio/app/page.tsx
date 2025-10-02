@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import emailjs from '@emailjs/browser'
+import { Analytics } from "@vercel/analytics/next"
 import { useState, useEffect } from 'react'
 import {
   Github,
@@ -69,7 +70,7 @@ export default function Portfolio() {
       title: "Free Eats",
       description: "Web application connecting restaurants with surplus food to food banks, and volunteers for pickup and delivery. Aims to reduce food waste and support communities in need.",
       longDescription: "Developed a full-stack web application using Java Spring Boot for the backend and React.js for the frontend. Implemented user authentication, restaurant and food bank profiles, navigation using Google Maps API, and real-time food availability claimings using WebSocket API. Demo is available upon request to limit google maps api usage.",
-      technologies: ["REST API", "Java", "Spring Boot", "React.js", "TypeScript", "MySQL", "Google Maps API", "WebSocket API", "JWT Authentication"],
+      technologies: ["REST API", "Java", "Spring Boot", "React.js", "TypeScript", "MySQL", "Bootstrap", "Google Maps API", "WebSocket API", "JWT Authentication"],
       status: "Deployed",
       category: "Web App",
       links: {
@@ -702,7 +703,7 @@ export default function Portfolio() {
         </div>
       </footer>
 
-
+      <Analytics />
   </div>
     
   )
